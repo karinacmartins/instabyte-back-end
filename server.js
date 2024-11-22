@@ -5,6 +5,7 @@ import routes from "./src/routes/postroutes.js";
 
 // Cria uma aplicação Express
 const app = express();
+app.use(express.static("uploads"));
 routes(app);
 
 // Inicia o servidor na porta 3000 e define um callback para exibir uma mensagem no console

@@ -1,6 +1,8 @@
 // Importa as funções de manipulação de posts e o módulo fs para manipulação de arquivos
-import { getTodosPosts, criarPost } from "../models/postModel.js";
+import { getTodosPosts, criarPost, atualizarPost } from "../models/postModel.js";
 import fs from "fs";
+import gerarDescricaoComGemini from "../services/geminisevices.js";
+
 
 // Função para listar todos os posts
 export async function listarPosts(req, res) {
@@ -53,5 +55,32 @@ export async function uploadImagem(req, res) {
         // Se ocorrer um erro, exibe o erro no console e envia uma resposta de erro
         console.error(erro.message); // Corrige o erro de digitação
         res.status(500).json({ "Erro": "Falha ao realizar o upload." });
+    }
+}
+
+export async function atualizarNovoPost(req, res) {
+    const id = req.params.id;
+    const urlImagem = `http://localhost:3000/${id}.png`
+    
+
+    try {
+        
+        const imgBuffer = fs.readFileSync(`uploads/${id}.png`);
+        const descricao = await gerarDescricaoComGemini(imgBuffer);
+        // Obtém o novo post a partir do corpo da requisição
+       
+        const post = {
+            imgUrl: urlImagem,
+            descricao: descricao,
+            alt: req.body.alt
+        }  
+
+        const postCriado = await atualizarPost(id, post);
+        // Retorna o post criado com um status de sucesso (200)
+        res.status(200).json(postCriado);
+    } catch (erro) {
+        // Se ocorrer um erro, exibe o erro no console e envia uma resposta de erro
+        console.error(erro.message); // Corrige o erro de digitação em "console.eror"
+        res.status(500).json({ "Erro": "Falha ao criar o post." });
     }
 }
