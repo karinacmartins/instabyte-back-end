@@ -6,14 +6,13 @@ import multer from "multer";
 import { listarPosts, postarNovoPost, uploadImagem, atualizarNovoPost } from "../controllers/postcontroller.js"; 
 
 
-const isDevelopment = process.env.NODE_ENV === "development";
-
 import cors from "cors";
 
 const corsOptions = {
-    origin: isDevelopment ? "http://localhost:8000" : "https://instabyte-frontend.netlify.app/",
-    optionsSucessStatus: 200
-}
+    origin: "*",  // Permite requisições de qualquer origem
+    optionsSuccessStatus: 200,
+  };
+  
 
 
 // Configuração do Multer para definir o armazenamento dos arquivos
