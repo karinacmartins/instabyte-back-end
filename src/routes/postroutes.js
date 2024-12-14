@@ -6,10 +6,22 @@ import multer from "multer";
 import { listarPosts, postarNovoPost, uploadImagem, atualizarNovoPost } from "../controllers/postcontroller.js"; 
 
 
-import cors from "cors";
-
-const corsOptions = {
-    origin: "*",  // Permite requisições de qualquer origem
+// Configuração do CORS
+const allowedOrigins = [
+    "http://localhost:3000", // Origem local para testes
+    "http://localhost:8000", // Outra origem local
+    "https://instabyte-front-end.vercel.app/", // Origem de produção
+    "https://instabyte-frontend.netlify.app/", // Origem de produção
+  ];
+  
+  const corsOptions = {
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     optionsSuccessStatus: 200,
   };
   
@@ -37,7 +49,7 @@ const routes = (app) => {
     // Configura o middleware para interpretar requisições com corpo no formato JSON
     app.use(express.json());
 
-    app.use(cors(corsOptions));
+    app.options("*", cors(corsOptions));// Responde a todas as requisições OPTIONS
 
     // Define uma rota GET na URL "/posts" para listar todos os posts
     // Chama a função 'listarPosts' para responder com os posts
