@@ -5,10 +5,13 @@ import multer from "multer";
 // Importando as funções dos controladores para as rotas
 import { listarPosts, postarNovoPost, uploadImagem, atualizarNovoPost } from "../controllers/postcontroller.js"; 
 
+
+const isDevelopment = process.env.NODE_ENV === "development";
+
 import cors from "cors";
 
 const corsOptions = {
-    origin: "http://localhost:8000",
+    origin: isDevelopment ? "http://localhost:8000" : "https://instabyte-frontend.netlify.app/",
     optionsSucessStatus: 200
 }
 
