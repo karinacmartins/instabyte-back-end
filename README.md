@@ -1,7 +1,8 @@
-# <img src="assets/images/byte.ico" alt="Logo" width="20"> InstaBytes
+# <img src="src/images/byte.png" alt="Logo" width="20"> InstaBytes
 
 Bem-vindo ao **InstaBytes**, uma aplicação simulando uma rede social de fotos, desenvolvida durante a Imersão de Back-end da Alura.
 
+<img src="src/images/screenshot.png" alt="Print do Projeto" width="400" />
 
 ## Índice
 
