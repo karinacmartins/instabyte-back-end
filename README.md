@@ -38,6 +38,9 @@ O objetivo principal do projeto é consolidar conhecimentos em desenvolvimento b
 ![Node.js](https://img.shields.io/badge/node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%2347A248.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white&style=for-the-badge)
+![Parcel Badge](https://img.shields.io/badge/Parcel-%23CB3837.svg?style=for-the-badge&logo=parcel&logoColor=white)
+![JSON Badge](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
+
 
 - **HTML5, CSS3, JavaScript**: Para estrutura, estilo e interatividade no front-end.
 - **Node.js**: Para construção do servidor e API.
