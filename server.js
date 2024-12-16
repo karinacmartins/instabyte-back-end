@@ -9,8 +9,9 @@ app.use(express.static("uploads"));
 routes(app);
 
 // Inicia o servidor na porta 3001 e define um callback para exibir uma mensagem no console
-app.listen(3001, () => {
-    console.log("Servidor escutando...");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`);
 });
 
 
