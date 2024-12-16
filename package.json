@@ -1,39 +1,35 @@
 {
-  "name": "",
+  "name": "instabyte-back-end",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend do Instabyte",
   "main": "index.js",
   "type": "module",
-  "license": "AGPL-version-3.0",
+  "license": "MIT",
   "private": false,
   "engines": {
-    "node": ">= 14.0.0",
-    "npm": ">= 6.0.0"
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   },
-  "homepage": "",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/karinacmartins/instabyte-back-end.git"
   },
-  "bugs": "",
-  "keywords": [],
   "author": {
-    "name": "",
-    "email": "",
-    "url": ""
+    "name": "Karina Martins",
+    "email": "nina.kastro@icloud.com",
+    "url": "https://github.com/karinacmartins"
   },
-  "contributors": [],
   "scripts": {
-    "dev": " node --watch --env-file=.env server.js",
+    "dev": "node --watch --env-file=.env server.js",
+    "start": "node server.js",
     "test": ""
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "cors": "^2.8.5",
-    "db": "^6.0.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongo": "^0.1.0",
+    "mongodb": "^5.6.0",
     "multer": "^1.4.5-lts.1"
   }
 }
