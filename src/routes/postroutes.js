@@ -11,7 +11,7 @@ import cors from "cors"; // Importação do CORS
 // Configuração do CORS
 const allowedOrigins = [  
   "http://localhost:8000", // Outra origem local
-  "https://instabyte-front-end.vercel.app", // Origem de produção  
+  "https://instabyte-frontend.netlify.app", // Origem de produção  
 ];
 
 const corsOptions = {
